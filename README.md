@@ -1,0 +1,2 @@
+# mandelbrot-glsl
+Inspired by [this tutorial](https://aimlesslygoingforward.com/blog/2016/09/27/mandelbrot-using-shaders-rust/), I wanted to redo [mandelbrot-rs](https://github.com/amatho/mandelbrot-rs) with OpenGL and GLSL
