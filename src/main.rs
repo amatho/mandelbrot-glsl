@@ -22,7 +22,8 @@ fn main() {
         .with_title("Mandelbrot Visualizer")
         .with_dimensions(DIMENSIONS.into())
         .with_resizable(false);
-    let context = glutin::ContextBuilder::new();
+    let context = glutin::ContextBuilder::new()
+        .with_gl(glutin::GlRequest::Specific(glutin::Api::OpenGl, (3, 2)));
     let display = glium::Display::new(window, context, &events_loop).unwrap();
 
     let program = glium::Program::from_source(
