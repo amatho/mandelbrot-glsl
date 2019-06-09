@@ -44,7 +44,7 @@ const VERTICES: [Vertex; 6] = [
 type ColorFormat = gfx::format::Srgba8;
 type DepthFormat = gfx::format::DepthStencil;
 
-gfx_defines!{
+gfx_defines! {
     vertex Vertex {
         pos: [f32; 4] = "a_Pos",
     }
@@ -81,10 +81,11 @@ fn main() {
 
     let pso = factory
         .create_pipeline_simple(
-            include_bytes!("shader/mandelbrot.glslv"),
-            include_bytes!("shader/mandelbrot.glslf"),
+            include_bytes!("shader/mandelbrot.vert"),
+            include_bytes!("shader/mandelbrot.frag"),
             pipe::new(),
-        ).unwrap();
+        )
+        .unwrap();
 
     let mut encoder: gfx::Encoder<_, _> = factory.create_command_buffer().into();
     let mut locals = Locals {
